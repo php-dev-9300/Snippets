@@ -1,0 +1,34 @@
+<?php
+//2 Files
+// Files 1 and 2 in local - sames server
+$a = file_get_contents('1.php');
+$b = file_get_contents('2.php');
+$a_hash = md5($a);
+$b_hash = md5($b);
+if($a_hash !== $b_hash) 
+echo "NOK is different";
+else 
+echo "OK is same";
+?>
+
+<?php
+// 2 Files
+// File $a in local and file $b in remote server
+$a = file_get_contents('2.php');
+$b = file_get_contents('https://url-raw-github-example');
+$a_hash = md5($a);
+$b_hash = md5($b);
+if($a_hash !== $b_hash) 
+echo "NOK is different";
+else 
+echo "OK is same";
+?>
+
+<?php 
+$filename =basename($_SERVER['SCRIPT_NAME']);
+if (file_exists($filename)) {
+echo "<p class='result'>$filename was last modified: " . date("F d Y H:i:s.", filemtime($filename)).'</p>';
+}
+ echo "<p class='result'>".$_SERVER['PHP_SELF']."</p>";   
+?>
+
