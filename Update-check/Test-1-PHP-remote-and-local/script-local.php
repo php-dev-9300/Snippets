@@ -15,7 +15,7 @@ echo "OK is same";
 // 2 Files
 // File $a in local and file $b in remote server
 $a = file_get_contents('2.php');
-$b = file_get_contents('https://url-raw-github-example');
+$b = file_get_contents('https://raw.githubusercontent.com/php-dev-9300/Snippets/main/Update-check/Test-1-PHP-remote-and-local/remote-example.php');
 $a_hash = md5($a);
 $b_hash = md5($b);
 if($a_hash !== $b_hash) 
