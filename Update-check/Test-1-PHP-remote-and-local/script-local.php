@@ -3,6 +3,8 @@
 // Files 1 and 2 in local - sames server
 $a = file_get_contents('1.php');
 $b = file_get_contents('2.php');
+$a = rtrim($a);
+$b = rtrim($b);
 $a_hash = md5($a);
 $b_hash = md5($b);
 if($a_hash !== $b_hash) 
